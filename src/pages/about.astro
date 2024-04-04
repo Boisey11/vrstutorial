@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = "About Me";
 
@@ -69,12 +70,26 @@ const textCase = "uppercase";
 			</ul>
 
 			{happy && <p>I am happy to be learning Astro!</p>}
+			<p>text</p>
 
 			{finished && <p>I finished this tutorial!</p>}
 			<!-- This format is an if else statement if the goal is 3 print the first statement
 			else print the second statement -->
 			{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
         </section>
+			
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				const bodyHeight = document.body.clientHeight;
+				const viewportHeight = window.innerHeight;
+				const footer = document.getElementById('footer');
 
+			if (bodyHeight > viewportHeight) {
+				footer.classList.add('footer-flex');
+        }
+    });
+		</script>
+
+		<Footer />
 	</body>
 </html>

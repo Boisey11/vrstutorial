@@ -1,0 +1,41 @@
+---
+import Social from '../components/Socials.astro';
+---
+
+<head>
+    <style>
+        body{
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 100px;
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            
+        }
+
+        .footer-flex{
+            position: relative;
+            margin-top: auto;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<footer>
+  <p>Learn more about my projects on some future links, coming soon!</p>
+  <Social platform = "Twitter" userName = "astrodobuild"/>
+  <Social platform = "GitHub" userNamel = "withdobu"/>
+  <Social platform = "Youtube" username1 =  "astrodotbuild" />
+</footer>
