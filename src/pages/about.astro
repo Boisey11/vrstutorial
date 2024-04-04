@@ -1,5 +1,18 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+  firstName: "Daniel",
+  country: "United States",
+  occupation: "Software Developer",
+  hobbies: ["coding", "reading", "gaming"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MongoDB"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -8,18 +21,42 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>This is a test sentence</h1>
-		<h1>My Astro Site</h1>
+		<h1>{pageTitle}</h1>
+		<h2>Second page of my new astro site!</h2>
         <section>
-            <h2>About Me</h2>
+            <p>This is a little something about me</p>
             <p>Welcome to my Astro site! I am a passionate developer who loves building amazing web applications.</p>
+
+			<p>Here are a few little facts about me: </p>
+			<ul>
+				<li>My name is {identity.firstName}.</li>
+				<li>I live in the {identity.country} and I work as a {identity.occupation}.</li>
+				<!-- This format is a conditional statement meaning if the hobbies length is greater than
+				or equal to 2 then print statement -->
+				{identity.hobbies.length >= 2 &&
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+				}
+			</ul>
+			<p>My skills are: </p>
+			<ul>
+				<!-- This format is a function that creates a new array by calling a provided function, this
+				creates a new array of list items for each skill in the skills array -->
+				{skills.map((skill) => <li>{skill}</li>)}
+			</ul>
+
+			{happy && <p>I am happy to be learning Astro!</p>}
+
+			{finished && <p>I finished this tutorial!</p>}
+			<!-- This format is an if else statement if the goal is 3 print the first statement
+			else print the second statement -->
+			{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
         </section>
 
 	</body>
