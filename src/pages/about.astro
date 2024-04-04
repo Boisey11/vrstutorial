@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -13,6 +15,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "Mon
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +28,18 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+			<!-- This format creates a variable called --skillColor which is then defined in the frontmatter -->
+		</style>
 	</head>
 	<body>
         <a href="/">Home</a>
@@ -48,7 +66,7 @@ const goal = 3;
 			<ul>
 				<!-- This format is a function that creates a new array by calling a provided function, this
 				creates a new array of list items for each skill in the skills array -->
-				{skills.map((skill) => <li>{skill}</li>)}
+				{skills.map((skill) => <li class="skill">{skill}</li>)}
 			</ul>
 
 			{happy && <p>I am happy to be learning Astro!</p>}
