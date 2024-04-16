@@ -44,9 +44,6 @@ tags: ["astro", "blogging", "learning in public", "successes"]
 		<title>Second Page</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
         <h1> This is a test sentence for the second blog </h1>
         <h1>TEST TEST TEST</h1>
         <p>After a successful first week learning Astro, I decided to try some more. I wrote and imported a small component from memory!</p>

@@ -44,9 +44,6 @@ tags: ["astro", "blogging", "learning in public"]
 		<title>Second Page</title>
 	</head>
 	<body>
-		<a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
         <h1> This is a test sentence for the first blog </h1>
 	</body>
 </html>
